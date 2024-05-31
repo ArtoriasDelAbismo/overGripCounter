@@ -1,10 +1,15 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 
 function App() {
 
-  const [count, setCount] = useState(0);
+  const retrievedNumber =  JSON.parse(localStorage.getItem("count"));
+  const [count, setCount] = useState(retrievedNumber);
 
+  useEffect(() => {
+    localStorage.setItem("count", JSON.stringify(count));
+    console.log(retrievedNumber);
+  }, [count])
 
   return (
     <div className="App">
