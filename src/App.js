@@ -8,7 +8,6 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem("count", JSON.stringify(count));
-    console.log(retrievedNumber);
   }, [count])
 
   return (
